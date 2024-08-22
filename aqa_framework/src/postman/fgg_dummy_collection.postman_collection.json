@@ -1,0 +1,1594 @@
+{
+	"info": {
+		"_postman_id": "fbff9318-3b94-4ad4-a36f-bbdb486d70a3",
+		"name": "FGG dummy collection",
+		"description": "// Creates initial time when request sent\n\nvar moment = require('moment')\nvar time = moment().toISOString();\n\n// Current Time\n\npm.environment.set('currentTime', time);\n\n// Past Time\n\nvar oneMinutePast = moment().subtract(1, \"minute\").seconds(0).format(\"YYYY-MM-DDTHH:mm:ssZ\");\nvar oneHourPast = moment().subtract(1, \"hour\").seconds(0).format(\"YYYY-MM-DDTHH:mm:ssZ\");\nvar oneDayPast = moment().subtract(1, \"day\").seconds(0).format(\"YYYY-MM-DDTHH:mm:ssZ\");\nvar oneWeekPast = moment().subtract(1, \"week\").seconds(0).format(\"YYYY-MM-DDTHH:mm:ssZ\");\nvar oneMonthPast = moment().subtract(1, \"month\").seconds(0).format(\"YYYY-MM-DDTHH:mm:ssZ\");\nvar oneYearPast = moment().subtract(1, \"year\").seconds(0).format(\"YYYY-MM-DDTHH:mm:ssZ\");\n\npm.environment.set('oneMinutePast', oneMinutePast);\npm.environment.set('oneHourPast', oneHourPast);\npm.environment.set('oneDayPast', oneDayPast);\npm.environment.set('oneWeekPast', oneWeekPast);\npm.environment.set('oneMonthPast', oneMonthPast);\npm.environment.set('oneYearPast', oneYearPast);\n\n// Future Time\n\nvar oneMinuteFuture = moment().add(1, \"minute\").seconds(0).format(\"YYYY-MM-DDTHH:mm:ssZ\");\nvar oneHourFuture = moment().add(1, \"hour\").seconds(0).format(\"YYYY-MM-DDTHH:mm:ssZ\");\nvar oneDayFuture = moment().add(1, \"day\").seconds(0).format(\"YYYY-MM-DDTHH:mm:ssZ\");\nvar oneWeekFuture = moment().add(1, \"week\").seconds(0).format(\"YYYY-MM-DDTHH:mm:ssZ\");\nvar oneMonthFuture = moment().add(1, \"month\").seconds(0).format(\"YYYY-MM-DDTHH:mm:ssZ\");\nvar oneYearFuture = moment().add(1, \"year\").seconds(0).format(\"YYYY-MM-DDTHH:mm:ssZ\");\n\npm.environment.set('oneMinuteFuture', oneMinuteFuture);\npm.environment.set('oneHourFuture', oneHourFuture);\npm.environment.set('oneDayFuture', oneDayFuture);\npm.environment.set('oneWeekFuture', oneWeekFuture);\npm.environment.set('oneMonthFuture', oneMonthFuture);\npm.environment.set('oneYearFuture', oneYearFuture);\n\n// Random Numbers\n\nvar randomNumber = 999999;\n\nvar generalNum = Math.floor(Math.random() * randomNumber);\npostman.setEnvironmentVariable(\"generalNumValue\", generalNum);\n\n// var termID = Math.floor(Math.random() * randomNumber);\n// postman.setEnvironmentVariable(\"termID\", termID);\n\n// var studentID = Math.floor(Math.random() * randomNumber);\n// postman.setEnvironmentVariable(\"studentID\", studentID);\n\n// var userID = \"lucas_skywalker\"\n// postman.setEnvironmentVariable(\"userID\", 1062171492);\n\n//var password = Math.floor(Math.random() * randomNumber);\n//postman.setEnvironmentVariable(\"password\", password);\n\n//var email = userID + \"@starwars.com\";\n//postman.setEnvironmentVariable(\"email\", email);\n\n// var phone1 =  Math.floor(Math.random() * randomNumber * 1000000);\n// postman.setEnvironmentVariable(\"phone1\", phone1);\n\n// var phone2 =  Math.floor(Math.random() * randomNumber * 1000000);\n// postman.setEnvironmentVariable(\"phone2\", phone2);\n\n// var phone3 =  Math.floor(Math.random() * randomNumber * 1000000);\n// postman.setEnvironmentVariable(\"phone3\", phone3);\n\n//var flagNotes =  \"Test-taker should get double time on their exam.\";\n//postman.setEnvironmentVariable(\"flagNotes\", flagNotes);\n\n//postman.setEnvironmentVariable(\"userPassword\", 'mtfbwya1337');\n// var randomNumber = 1000;\n// var time = new Date().toISOString();\n// postman.setEnvironmentVariable(\"currentTime\", time);\n\n// var startDate = \"2014-08-29T00:00:00Z\";\n// postman.setEnvironmentVariable(\"startDate\", startDate);\n\n// var endDate = \"2019-08-29T00:00:00Z\";\n// postman.setEnvironmentVariable(\"endDate\", endDate);\n\n// var examID = Math.floor(Math.random() * randomNumber);\n// postman.setEnvironmentVariable(\"examID\", examID);\n\n// var courseID = Math.floor(Math.random() * randomNumber);\n// postman.setEnvironmentVariable(\"courseID\", courseID);\n\n// var termName = \"Term \" + Math.floor(Math.random() * randomNumber);\n// postman.setEnvironmentVariable(\"termName\", termName);\n\n// var description = \"This is a description \" + Math.floor(Math.random() * randomNumber);\n// postman.setEnvironmentVariable(\"description\", description);\n\n// var instructor = \"Random Instructor \" + Math.floor(Math.random() * randomNumber);\n// postman.setEnvironmentVariable(\"instructor\", instructor);\n\n// var password = Math.floor(Math.random() * randomNumber);\n// postman.setEnvironmentVariable(\"password\", password);\n\n// var termID = Math.floor(Math.random() * randomNumber);\n// postman.setEnvironmentVariable(\"termID\", termID);\n\n// var courseNo = \"The Force 101\";\n\n// postman.setEnvironmentVariable(\"courseNo\", courseNo);\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7191208"
+	},
+	"item": [
+		{
+			"name": "DEV-3614 Bluebird Testing",
+			"item": [
+				{
+					"name": "getTimeZoneList",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var moment = require('moment')",
+									"var time = moment()",
+									"",
+									"pm.environment.set('currentTimeISO', time.toISOString());"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization-Token",
+								"value": "{{api-inst-token}}",
+								"description": "ProctorU's provided API key used for authentication"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/getTimeZoneList/?time_sent={{currentTimeISO}}",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"getTimeZoneList",
+								""
+							],
+							"query": [
+								{
+									"key": "time_sent",
+									"value": "{{currentTimeISO}}",
+									"description": "<p><strong>(required)</strong></p>Timestamp that should be sent within two minutes of the current time. \n<br>\n<br><strong>Type:</strong>  ISO8601 DateTime In UTC \n<br><strong>Format:</strong>YYYY-MM-DDTHH24:MI:SSZ"
+								}
+							]
+						},
+						"description": "This resource returns a list of time zones."
+					},
+					"response": [
+						{
+							"name": "getTimeZoneList",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization-Token",
+										"value": "{{API-Key}}",
+										"description": "ProctorU's provided API key used for authentication"
+									}
+								],
+								"url": {
+									"raw": "{{URL}}/getTimeZoneList/?time_sent={{currentTime}}",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"getTimeZoneList",
+										""
+									],
+									"query": [
+										{
+											"key": "time_sent",
+											"value": "{{currentTime}}",
+											"description": "<p><strong>(required)</strong></p>Timestamp that should be sent within two minutes of the current time. \n<br>\n<br><strong>Type:</strong>  ISO8601 DateTime In UTC \n<br><strong>Format:</strong>YYYY-MM-DDTHH24:MI:SSZ"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "Text",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"time_sent\": \"2020-05-13T16:18:23Z\",\n    \"response_code\": 1,\n    \"message\": \"\",\n    \"data\": [\n        {\n            \"TimeZoneNo\": 42,\n            \"GMTOffset\": -12.0,\n            \"Id\": \"Dateline Standard Time\",\n            \"DisplayName\": \"(UTC-12:00) International Date Line West\",\n            \"Description\": \"Dateline Standard Time\",\n            \"SortOrder\": 100,\n            \"LocalTime\": \"4:18 AM\",\n            \"DST\": false\n            }\n        ]\n    }"
+						}
+					]
+				},
+				{
+					"name": "addBlueBirdExam - ETS",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"student_id\", _.random(1000000, 9999999))",
+									"pm.environment.set(\"random_number\", _.random(1000000, 9999999))",
+									"var moment = require('moment')",
+									"var random_int = _.random(1, 3)",
+									"",
+									"var RandomStartFuture = moment().add(random_int, \"week\").seconds(0).format(\"YYYY-MM-DDTHH:mm:ssZ\");",
+									"var RandomEndFuture = moment().add(random_int, \"month\").seconds(0).format(\"YYYY-MM-DDTHH:mm:ssZ\");",
+									"",
+									"pm.environment.set(\"student_id\", _.random(1000000, 9999999))",
+									"pm.environment.set('RandomStartFuture', RandomStartFuture);",
+									"pm.environment.set('RandomEndFuture', RandomEndFuture);",
+									"",
+									"",
+									"pm.environment.set(\"reservation_id\", _.random(100000000, 999999999))",
+									"pm.environment.set(\"external_id\", _.random(100000000, 999999999))",
+									"pm.environment.set(\"schedule_id1\", _.random(100000000, 999999999))",
+									"pm.environment.set(\"schedule_id2\", _.random(100000000, 999999999))"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization-Token",
+								"value": "{{ets-api-token}}",
+								"description": "ProctorU's provided API key used for authentication"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "time_sent",
+									"value": "{{currentTime}}",
+									"description": "<p><strong>(required)</strong></p>Timestamp that should be sent within two minutes of the current time. \n<br>\n<br><strong>Type:</strong>  ISO8601 DateTime In UTC \n<br><strong>Format:</strong>YYYY-MM-DDTHH24:MI:SSZ",
+									"type": "text"
+								},
+								{
+									"key": "student_id",
+									"value": "{{student_id}}",
+									"description": "Institution's unique test-taker ID. Can be used to scope the report down to an individual user.",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "{{userID}}",
+									"description": "Username for the test-taker; used to log in to ProctorU's scheduling system",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "user_password",
+									"value": "{{userPassword}}",
+									"description": "ProctorU's password for the test-taker; used to log in to ProctorU's scheduling system",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "first_name",
+									"value": "{{$randomFirstName}}",
+									"description": "<p><strong>(required)</strong></p>Test-taker's first name",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "{{$randomLastName}}",
+									"description": "<p><strong>(required)</strong></p> Test-taker's last name",
+									"type": "text"
+								},
+								{
+									"key": "country",
+									"value": "{{$randomCountryCode}}",
+									"description": "<p><strong>(preferred)</strong></p> Test-taker's Country ",
+									"type": "text"
+								},
+								{
+									"key": "phone1",
+									"value": "{{$randomPhoneNumber}}",
+									"description": "Test-taker's Primary Telephone Number",
+									"type": "text"
+								},
+								{
+									"key": "phone2",
+									"value": "{{$randomPhoneNumber}}",
+									"description": "Test-taker's Secondary Telephone Number",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "{{$randomEmail}}",
+									"description": "<p><strong>(required)</strong></p> Test-taker's Email",
+									"type": "text"
+								},
+								{
+									"key": "time_zone_id",
+									"value": "Central Standard Time",
+									"description": "<p><strong>(preferred)</strong></p> Time Zone ID - please call getTimeZoneList for a list of IDs",
+									"type": "text"
+								},
+								{
+									"key": "notify",
+									"value": "N",
+									"description": "Whether to notify the test-taker of this scheduling by e-mail. Defaults to true if omitted.  ",
+									"type": "text"
+								},
+								{
+									"key": "exam_id",
+									"value": "EX_{{random_number}}",
+									"description": "<p><strong>(required)</strong></p>Institution's unique exam ID. Pass this back in order to update the exam. <br><br><strong>Please note that when creating the exam_id, the system appends the student_id to it as well.</strong> <br><br> Example: <br><br>Sending over the following params:<br><br><code>{ \"exam_id\": \"123\", \"student_id\": \"456\"}</code><br><br> will result in the <code>exam_id</code> being \"123-456\". This is because bluebird exams are treated as single user exams.  When using certain reports, this may be reflected in the response that is given back.",
+									"type": "text"
+								},
+								{
+									"key": "course_id",
+									"value": "ARC_{{random_number}}",
+									"description": "Institution's unique identifier for a course",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "{{$randomLoremWords}} - BlueBird Licata",
+									"description": "<p><strong>(required)</strong></p> Title of the exam",
+									"type": "text"
+								},
+								{
+									"key": "active_date",
+									"value": "{{currentTime}}",
+									"description": "<p><strong>(required)</strong></p> Earliest possible date for a test-taker to schedule the exam  ",
+									"type": "text"
+								},
+								{
+									"key": "end_date",
+									"value": "{{RandomEndFuture}}",
+									"description": "<p><strong>(required)</strong></p> Latest possible date for a test-taker to schedule the exam  ",
+									"type": "text"
+								},
+								{
+									"key": "test_delivery_id",
+									"value": "5050",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "proctoru",
+									"description": "Instructor's name  ",
+									"type": "text"
+								},
+								{
+									"key": "course_no",
+									"value": "course{{random_number}}",
+									"description": "Course Description.",
+									"type": "text"
+								},
+								{
+									"key": "exam_url",
+									"value": "https://starwars.com/quiz",
+									"description": "<p><strong>(required)</strong></p> URL where the exam is located",
+									"type": "text"
+								},
+								{
+									"key": "exam_password",
+									"value": "{{password}}",
+									"description": "Password for the exam",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "notes",
+									"value": "This is a ProctorU QA Test by the QA Dept at ProctorU. Don't Cancel, Review, etc. If you have questions, contact Engineering at ProctorU.",
+									"description": "Notes that only the proctors / ProctorU can view. Add instructions here for proctors (no resources allowed, 1 bathroom break, navigate to this url). You may pass HTML here to format the code for visibility.",
+									"type": "text"
+								},
+								{
+									"key": "preset",
+									"value": "low",
+									"description": "low, medium, high - defaults to low if left blank/not included",
+									"type": "text"
+								},
+								{
+									"key": "department_id",
+									"value": "",
+									"description": "defaults to the default dept if blank/not included.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "duration",
+									"value": "50",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/addBlueBirdExam/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"addBlueBirdExam",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "1 - Successful response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization-Token",
+										"value": "{{API-Key}}",
+										"description": "ProctorU's provided API key used for authentication"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "time_sent",
+											"value": "{{currentTime}}",
+											"description": "<p><strong>(required)</strong></p>Timestamp that should be sent within two minutes of the current time. \n<br>\n<br><strong>Type:</strong>  ISO8601 DateTime In UTC \n<br><strong>Format:</strong>YYYY-MM-DDTHH24:MI:SSZ",
+											"type": "text"
+										},
+										{
+											"key": "student_id",
+											"value": "{{studentID}}",
+											"description": "Institution's unique test-taker ID. Can be used to scope the report down to an individual user.",
+											"type": "text"
+										},
+										{
+											"key": "user_id",
+											"value": "{{userID}}",
+											"description": "Username for the test-taker; used to log in to ProctorU's scheduling system",
+											"type": "text"
+										},
+										{
+											"key": "user_password",
+											"value": "{{userPassword}}",
+											"description": "ProctorU's password for the test-taker; used to log in to ProctorU's scheduling system",
+											"type": "text"
+										},
+										{
+											"key": "first_name",
+											"value": "{{firstName}}",
+											"description": "<p><strong>(required)</strong></p>Test-taker's first name",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "{{lastName}}",
+											"description": "<p><strong>(required)</strong></p> Test-taker's last name",
+											"type": "text"
+										},
+										{
+											"key": "country",
+											"value": "{{country}}",
+											"description": "<p><strong>(preferred)</strong></p> Test-taker's Country ",
+											"type": "text"
+										},
+										{
+											"key": "phone1",
+											"value": "{{phone1}}",
+											"description": "Test-taker's Primary Telephone Number",
+											"type": "text"
+										},
+										{
+											"key": "phone2",
+											"value": "{{phone2}}",
+											"description": "Test-taker's Secondary Telephone Number",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "{{email}}",
+											"description": "<p><strong>(required)</strong></p> Test-taker's Email",
+											"type": "text"
+										},
+										{
+											"key": "time_zone_id",
+											"value": "{{time_zone_id}}",
+											"description": "<p><strong>(preferred)</strong></p> Time Zone ID - please call getTimeZoneList for a list of IDs",
+											"type": "text"
+										},
+										{
+											"key": "notify",
+											"value": "Y",
+											"description": "Whether to notify the test-taker of this scheduling by e-mail. Defaults to true if omitted.  ",
+											"type": "text"
+										},
+										{
+											"key": "exam_id",
+											"value": "{{examID}}",
+											"description": "<p><strong>(required)</strong></p>Institution's unique exam ID. Pass this back in order to update the exam. <br><br><strong>Please note that when creating the exam_id, the system appends the student_id to it as well.</strong> <br><br> Example: <br><br>Sending over the following params:<br><br><code>{ \"exam_id\": \"123\", \"student_id\": \"456\"}</code><br><br> will result in the <code>exam_id</code> being \"123-456\". This is because bluebird exams are treated as single user exams.  When using certain reports, this may be reflected in the response that is given back.",
+											"type": "text"
+										},
+										{
+											"key": "course_id",
+											"value": "{{courseID}}",
+											"description": "Institution's unique identifier for a course",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "{{description}}",
+											"description": "<p><strong>(required)</strong></p> Title of the exam",
+											"type": "text"
+										},
+										{
+											"key": "active_date",
+											"value": "{{start_date}}",
+											"description": "<p><strong>(required)</strong></p> Earliest possible date for a test-taker to schedule the exam  ",
+											"type": "text"
+										},
+										{
+											"key": "end_date",
+											"value": "{{end_date}}",
+											"description": "<p><strong>(required)</strong></p> Latest possible date for a test-taker to schedule the exam  ",
+											"type": "text"
+										},
+										{
+											"key": "duration",
+											"value": "{{duration}}",
+											"description": "Total time allowed for the exam in minutes. Defaults to `120` if left blank.",
+											"type": "text"
+										},
+										{
+											"key": "instructor",
+											"value": "{{instructor}}",
+											"description": "Instructor's name  ",
+											"type": "text"
+										},
+										{
+											"key": "course_no",
+											"value": "{{courseNo}}",
+											"description": "Course Description.",
+											"type": "text"
+										},
+										{
+											"key": "exam_url",
+											"value": "https://www.starwars.com/quiz",
+											"description": "<p><strong>(required)</strong></p> URL where the exam is located",
+											"type": "text"
+										},
+										{
+											"key": "exam_password",
+											"value": "{{password}}",
+											"description": "Password for the exam",
+											"type": "text"
+										},
+										{
+											"key": "notes",
+											"value": "{{notes}}",
+											"description": "Notes that only the proctors / ProctorU can view. Add instructions here for proctors (no resources allowed, 1 bathroom break, navigate to this url). You may pass HTML here to format the code for visibility.",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL}}/addBlueBirdExam/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"addBlueBirdExam",
+										""
+									]
+								},
+								"description": "This resource will initiate the addition or update of test-taker registration, as well as adding individual exam information for one student.\n\nTo update an existing BlueBird exam in the system, the student_id, course_id, and exam_id parameters must all contain values, and they must match an existing record in the system."
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate",
+									"name": "Cache-Control",
+									"description": ""
+								},
+								{
+									"key": "Connection",
+									"value": "close",
+									"name": "Connection",
+									"description": ""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": ""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 11 Aug 2017 16:24:30 GMT",
+									"name": "Date",
+									"description": ""
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8b434733a3769343f58cbb4b4af428ad\"",
+									"name": "ETag",
+									"description": ""
+								},
+								{
+									"key": "Server",
+									"value": "nginx/1.10.3 (Ubuntu)",
+									"name": "Server",
+									"description": ""
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "request_method=POST; path=/; secure",
+									"name": "Set-Cookie",
+									"description": ""
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000",
+									"name": "Strict-Transport-Security",
+									"description": ""
+								},
+								{
+									"key": "Vary",
+									"value": "Origin",
+									"name": "Vary",
+									"description": ""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "ALLOWALL",
+									"name": "X-Frame-Options",
+									"description": ""
+								},
+								{
+									"key": "X-Rack-Cache",
+									"value": "invalidate, pass",
+									"name": "X-Rack-Cache",
+									"description": ""
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "374fea5e-7609-413d-bcc2-3ff47dc6427a",
+									"name": "X-Request-Id",
+									"description": ""
+								},
+								{
+									"key": "X-Runtime",
+									"value": "2.544132",
+									"name": "X-Runtime",
+									"description": ""
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"httpOnly": false,
+									"domain": "demo.proctoru.com",
+									"path": "/",
+									"secure": true,
+									"value": "POST",
+									"key": "request_method"
+								}
+							],
+							"body": "{\"time_sent\":\"2017-08-11T16:24:30Z\",\"response_code\":1,\"message\":\"\",\"data\":{\"url\":\"https://demo.proctoru.com/students/reservations?login_token=BAhpBIFLJjc%3D--8fb2f15618c63ffccdbfc02d4c6657203e007da0\\u0026return_to=\"}}"
+						},
+						{
+							"name": "1 - Successful response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization-Token",
+										"value": "{{API-Key}}"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "time_sent",
+											"value": "{{currentTime}}",
+											"description": "<p><strong>(required)</strong></p>Timestamp that should be sent within two minutes of the current time. \n<br>\n<br><strong>Type:</strong>  ISO8601 DateTime In UTC \n<br><strong>Format:</strong>YYYY-MM-DDTHH24:MI:SSZ",
+											"type": "text"
+										},
+										{
+											"key": "student_id",
+											"value": "{{studentID}}",
+											"type": "text"
+										},
+										{
+											"key": "user_id",
+											"value": "{{studentID}}",
+											"type": "text"
+										},
+										{
+											"key": "user_password",
+											"value": "{{userPassword}}",
+											"type": "text"
+										},
+										{
+											"key": "country",
+											"value": "{{country}}",
+											"type": "text"
+										},
+										{
+											"key": "phone1",
+											"value": "{{phone1}}",
+											"type": "text"
+										},
+										{
+											"key": "phone2",
+											"value": "{{phone2}}",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "{{email}}",
+											"type": "text"
+										},
+										{
+											"key": "time_zone_id",
+											"value": "{{time_zone_id}}",
+											"type": "text"
+										},
+										{
+											"key": "notify",
+											"value": "Y",
+											"type": "text"
+										},
+										{
+											"key": "exam_id",
+											"value": "{{examID}}",
+											"type": "text"
+										},
+										{
+											"key": "course_id",
+											"value": "{{courseID}}",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "{{description}}",
+											"type": "text"
+										},
+										{
+											"key": "active_date",
+											"value": "{{start_date}}",
+											"type": "text"
+										},
+										{
+											"key": "end_date",
+											"value": "{{end_date}}",
+											"type": "text"
+										},
+										{
+											"key": "duration",
+											"value": "{{duration}}",
+											"type": "text"
+										},
+										{
+											"key": "instructor",
+											"value": "{{instructor}}",
+											"type": "text"
+										},
+										{
+											"key": "course_no",
+											"value": "{{courseNo}}",
+											"type": "text"
+										},
+										{
+											"key": "exam_password",
+											"value": "{{password}}",
+											"type": "text"
+										},
+										{
+											"key": "notes",
+											"value": "{{notes}}",
+											"type": "text"
+										},
+										{
+											"key": "reservation_id",
+											"value": "{{reservationID}}",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "{{lastName}}",
+											"type": "text"
+										},
+										{
+											"key": "first_name",
+											"value": "{{firstName}}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL}}/addBlueBirdExam/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"addBlueBirdExam",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate",
+									"name": "Cache-Control",
+									"description": ""
+								},
+								{
+									"key": "Connection",
+									"value": "close",
+									"name": "Connection",
+									"description": ""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": ""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 11 Aug 2017 16:24:30 GMT",
+									"name": "Date",
+									"description": ""
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8b434733a3769343f58cbb4b4af428ad\"",
+									"name": "ETag",
+									"description": ""
+								},
+								{
+									"key": "Server",
+									"value": "nginx/1.10.3 (Ubuntu)",
+									"name": "Server",
+									"description": ""
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "request_method=POST; path=/; secure",
+									"name": "Set-Cookie",
+									"description": ""
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000",
+									"name": "Strict-Transport-Security",
+									"description": ""
+								},
+								{
+									"key": "Vary",
+									"value": "Origin",
+									"name": "Vary",
+									"description": ""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "ALLOWALL",
+									"name": "X-Frame-Options",
+									"description": ""
+								},
+								{
+									"key": "X-Rack-Cache",
+									"value": "invalidate, pass",
+									"name": "X-Rack-Cache",
+									"description": ""
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "374fea5e-7609-413d-bcc2-3ff47dc6427a",
+									"name": "X-Request-Id",
+									"description": ""
+								},
+								{
+									"key": "X-Runtime",
+									"value": "2.544132",
+									"name": "X-Runtime",
+									"description": ""
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"httpOnly": false,
+									"domain": "demo.proctoru.com",
+									"path": "/",
+									"secure": true,
+									"value": "POST",
+									"key": "request_method"
+								}
+							],
+							"body": "{\"time_sent\":\"2017-08-11T16:24:30Z\",\"response_code\":1,\"message\":\"\",\"data\":{\"url\":\"https://demo.proctoru.com/students/reservations?login_token=BAhpBIFLJjc%3D--8fb2f15618c63ffccdbfc02d4c6657203e007da0\\u0026return_to=\"}}"
+						}
+					]
+				},
+				{
+					"name": "addBlueBirdExam - API University",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"student_id\", _.random(1000000, 9999999))",
+									"pm.environment.set(\"random_number\", _.random(1000000, 9999999))",
+									"var moment = require('moment')",
+									"var random_int = _.random(1, 3)",
+									"",
+									"var RandomStartFuture = moment().add(random_int, \"week\").seconds(0).format(\"YYYY-MM-DDTHH:mm:ssZ\");",
+									"var RandomEndFuture = moment().add(random_int, \"month\").seconds(0).format(\"YYYY-MM-DDTHH:mm:ssZ\");",
+									"",
+									"pm.environment.set(\"student_id\", _.random(1000000, 9999999))",
+									"pm.environment.set('RandomStartFuture', RandomStartFuture);",
+									"pm.environment.set('RandomEndFuture', RandomEndFuture);",
+									"",
+									"",
+									"pm.environment.set(\"reservation_id\", _.random(100000000, 999999999))",
+									"pm.environment.set(\"external_id\", _.random(100000000, 999999999))",
+									"pm.environment.set(\"schedule_id1\", _.random(100000000, 999999999))",
+									"pm.environment.set(\"schedule_id2\", _.random(100000000, 999999999))"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"@C1396094 Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"// pm.test(\"Contains reservation link\", function () {",
+									"//     pm.expect(pm.response.text()).to.include(\"https://staging.proctoru.com/students/reservations?login_token=\");",
+									"// });",
+									"pm.test(\"Contains reservation link\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"https://staging.proctoru.com/students/reservations?\");",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization-Token",
+								"value": "{{api-inst-token}}",
+								"description": "ProctorU's provided API key used for authentication"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "time_sent",
+									"value": "{{currentTime}}",
+									"description": "<p><strong>(required)</strong></p>Timestamp that should be sent within two minutes of the current time. \n<br>\n<br><strong>Type:</strong>  ISO8601 DateTime In UTC \n<br><strong>Format:</strong>YYYY-MM-DDTHH24:MI:SSZ",
+									"type": "text"
+								},
+								{
+									"key": "student_id",
+									"value": "{{student_id}}",
+									"description": "Institution's unique test-taker ID. Can be used to scope the report down to an individual user.",
+									"type": "text"
+								},
+								{
+									"key": "user_id",
+									"value": "{{userID}}",
+									"description": "Username for the test-taker; used to log in to ProctorU's scheduling system",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "user_password",
+									"value": "{{userPassword}}",
+									"description": "ProctorU's password for the test-taker; used to log in to ProctorU's scheduling system",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "first_name",
+									"value": "{{$randomFirstName}}",
+									"description": "<p><strong>(required)</strong></p>Test-taker's first name",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "{{$randomLastName}}",
+									"description": "<p><strong>(required)</strong></p> Test-taker's last name",
+									"type": "text"
+								},
+								{
+									"key": "country",
+									"value": "{{$randomCountryCode}}",
+									"description": "<p><strong>(preferred)</strong></p> Test-taker's Country ",
+									"type": "text"
+								},
+								{
+									"key": "phone1",
+									"value": "{{$randomPhoneNumber}}",
+									"description": "Test-taker's Primary Telephone Number",
+									"type": "text"
+								},
+								{
+									"key": "phone2",
+									"value": "{{$randomPhoneNumber}}",
+									"description": "Test-taker's Secondary Telephone Number",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "{{$randomExampleEmail}}",
+									"description": "<p><strong>(required)</strong></p> Test-taker's Email",
+									"type": "text"
+								},
+								{
+									"key": "time_zone_id",
+									"value": "Central Standard Time",
+									"description": "<p><strong>(preferred)</strong></p> Time Zone ID - please call getTimeZoneList for a list of IDs",
+									"type": "text"
+								},
+								{
+									"key": "notify",
+									"value": "N",
+									"description": "Whether to notify the test-taker of this scheduling by e-mail. Defaults to true if omitted.  ",
+									"type": "text"
+								},
+								{
+									"key": "exam_id",
+									"value": "EX_{{random_number}}",
+									"description": "<p><strong>(required)</strong></p>Institution's unique exam ID. Pass this back in order to update the exam. <br><br><strong>Please note that when creating the exam_id, the system appends the student_id to it as well.</strong> <br><br> Example: <br><br>Sending over the following params:<br><br><code>{ \"exam_id\": \"123\", \"student_id\": \"456\"}</code><br><br> will result in the <code>exam_id</code> being \"123-456\". This is because bluebird exams are treated as single user exams.  When using certain reports, this may be reflected in the response that is given back.",
+									"type": "text"
+								},
+								{
+									"key": "course_id",
+									"value": "ARC_{{random_number}}",
+									"description": "Institution's unique identifier for a course",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "{{$randomLoremWords}} - BlueBird API Univ",
+									"description": "<p><strong>(required)</strong></p> Title of the exam",
+									"type": "text"
+								},
+								{
+									"key": "active_date",
+									"value": "{{currentTime}}",
+									"description": "<p><strong>(required)</strong></p> Earliest possible date for a test-taker to schedule the exam  ",
+									"type": "text"
+								},
+								{
+									"key": "end_date",
+									"value": "{{RandomEndFuture}}",
+									"description": "<p><strong>(required)</strong></p> Latest possible date for a test-taker to schedule the exam  ",
+									"type": "text"
+								},
+								{
+									"key": "test_delivery_id",
+									"value": "5050",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "proctoru",
+									"description": "Instructor's name  ",
+									"type": "text"
+								},
+								{
+									"key": "course_no",
+									"value": "{{random_number}}",
+									"description": "Course Description.",
+									"type": "text"
+								},
+								{
+									"key": "exam_url",
+									"value": "https://starwars.com/quiz",
+									"description": "<p><strong>(required)</strong></p> URL where the exam is located",
+									"type": "text"
+								},
+								{
+									"key": "exam_password",
+									"value": "{{password}}",
+									"description": "Password for the exam",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "notes",
+									"value": "{{$randomLoremLines}}",
+									"description": "Notes that only the proctors / ProctorU can view. Add instructions here for proctors (no resources allowed, 1 bathroom break, navigate to this url). You may pass HTML here to format the code for visibility.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "preset",
+									"value": "low",
+									"description": "low, medium, high - defaults to low if left blank/not included",
+									"type": "text"
+								},
+								{
+									"key": "department_id",
+									"value": "2723",
+									"description": "defaults to the default dept if blank/not included.",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "duration",
+									"value": "60",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/addBlueBirdExam/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"addBlueBirdExam",
+								""
+							]
+						},
+						"description": "DEFECT - CAN SCHEDULE IN PAST"
+					},
+					"response": [
+						{
+							"name": "1 - Successful response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization-Token",
+										"value": "{{API-Key}}",
+										"description": "ProctorU's provided API key used for authentication"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "time_sent",
+											"value": "{{currentTime}}",
+											"description": "<p><strong>(required)</strong></p>Timestamp that should be sent within two minutes of the current time. \n<br>\n<br><strong>Type:</strong>  ISO8601 DateTime In UTC \n<br><strong>Format:</strong>YYYY-MM-DDTHH24:MI:SSZ",
+											"type": "text"
+										},
+										{
+											"key": "student_id",
+											"value": "{{studentID}}",
+											"description": "Institution's unique test-taker ID. Can be used to scope the report down to an individual user.",
+											"type": "text"
+										},
+										{
+											"key": "user_id",
+											"value": "{{userID}}",
+											"description": "Username for the test-taker; used to log in to ProctorU's scheduling system",
+											"type": "text"
+										},
+										{
+											"key": "user_password",
+											"value": "{{userPassword}}",
+											"description": "ProctorU's password for the test-taker; used to log in to ProctorU's scheduling system",
+											"type": "text"
+										},
+										{
+											"key": "first_name",
+											"value": "{{firstName}}",
+											"description": "<p><strong>(required)</strong></p>Test-taker's first name",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "{{lastName}}",
+											"description": "<p><strong>(required)</strong></p> Test-taker's last name",
+											"type": "text"
+										},
+										{
+											"key": "country",
+											"value": "{{country}}",
+											"description": "<p><strong>(preferred)</strong></p> Test-taker's Country ",
+											"type": "text"
+										},
+										{
+											"key": "phone1",
+											"value": "{{phone1}}",
+											"description": "Test-taker's Primary Telephone Number",
+											"type": "text"
+										},
+										{
+											"key": "phone2",
+											"value": "{{phone2}}",
+											"description": "Test-taker's Secondary Telephone Number",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "{{email}}",
+											"description": "<p><strong>(required)</strong></p> Test-taker's Email",
+											"type": "text"
+										},
+										{
+											"key": "time_zone_id",
+											"value": "{{time_zone_id}}",
+											"description": "<p><strong>(preferred)</strong></p> Time Zone ID - please call getTimeZoneList for a list of IDs",
+											"type": "text"
+										},
+										{
+											"key": "notify",
+											"value": "Y",
+											"description": "Whether to notify the test-taker of this scheduling by e-mail. Defaults to true if omitted.  ",
+											"type": "text"
+										},
+										{
+											"key": "exam_id",
+											"value": "{{examID}}",
+											"description": "<p><strong>(required)</strong></p>Institution's unique exam ID. Pass this back in order to update the exam. <br><br><strong>Please note that when creating the exam_id, the system appends the student_id to it as well.</strong> <br><br> Example: <br><br>Sending over the following params:<br><br><code>{ \"exam_id\": \"123\", \"student_id\": \"456\"}</code><br><br> will result in the <code>exam_id</code> being \"123-456\". This is because bluebird exams are treated as single user exams.  When using certain reports, this may be reflected in the response that is given back.",
+											"type": "text"
+										},
+										{
+											"key": "course_id",
+											"value": "{{courseID}}",
+											"description": "Institution's unique identifier for a course",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "{{description}}",
+											"description": "<p><strong>(required)</strong></p> Title of the exam",
+											"type": "text"
+										},
+										{
+											"key": "active_date",
+											"value": "{{start_date}}",
+											"description": "<p><strong>(required)</strong></p> Earliest possible date for a test-taker to schedule the exam  ",
+											"type": "text"
+										},
+										{
+											"key": "end_date",
+											"value": "{{end_date}}",
+											"description": "<p><strong>(required)</strong></p> Latest possible date for a test-taker to schedule the exam  ",
+											"type": "text"
+										},
+										{
+											"key": "duration",
+											"value": "{{duration}}",
+											"description": "Total time allowed for the exam in minutes. Defaults to `120` if left blank.",
+											"type": "text"
+										},
+										{
+											"key": "instructor",
+											"value": "{{instructor}}",
+											"description": "Instructor's name  ",
+											"type": "text"
+										},
+										{
+											"key": "course_no",
+											"value": "{{courseNo}}",
+											"description": "Course Description.",
+											"type": "text"
+										},
+										{
+											"key": "exam_url",
+											"value": "https://www.starwars.com/quiz",
+											"description": "<p><strong>(required)</strong></p> URL where the exam is located",
+											"type": "text"
+										},
+										{
+											"key": "exam_password",
+											"value": "{{password}}",
+											"description": "Password for the exam",
+											"type": "text"
+										},
+										{
+											"key": "notes",
+											"value": "{{notes}}",
+											"description": "Notes that only the proctors / ProctorU can view. Add instructions here for proctors (no resources allowed, 1 bathroom break, navigate to this url). You may pass HTML here to format the code for visibility.",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL}}/addBlueBirdExam/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"addBlueBirdExam",
+										""
+									]
+								},
+								"description": "This resource will initiate the addition or update of test-taker registration, as well as adding individual exam information for one student.\n\nTo update an existing BlueBird exam in the system, the student_id, course_id, and exam_id parameters must all contain values, and they must match an existing record in the system."
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate",
+									"name": "Cache-Control",
+									"description": ""
+								},
+								{
+									"key": "Connection",
+									"value": "close",
+									"name": "Connection",
+									"description": ""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": ""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 11 Aug 2017 16:24:30 GMT",
+									"name": "Date",
+									"description": ""
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8b434733a3769343f58cbb4b4af428ad\"",
+									"name": "ETag",
+									"description": ""
+								},
+								{
+									"key": "Server",
+									"value": "nginx/1.10.3 (Ubuntu)",
+									"name": "Server",
+									"description": ""
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "request_method=POST; path=/; secure",
+									"name": "Set-Cookie",
+									"description": ""
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000",
+									"name": "Strict-Transport-Security",
+									"description": ""
+								},
+								{
+									"key": "Vary",
+									"value": "Origin",
+									"name": "Vary",
+									"description": ""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "ALLOWALL",
+									"name": "X-Frame-Options",
+									"description": ""
+								},
+								{
+									"key": "X-Rack-Cache",
+									"value": "invalidate, pass",
+									"name": "X-Rack-Cache",
+									"description": ""
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "374fea5e-7609-413d-bcc2-3ff47dc6427a",
+									"name": "X-Request-Id",
+									"description": ""
+								},
+								{
+									"key": "X-Runtime",
+									"value": "2.544132",
+									"name": "X-Runtime",
+									"description": ""
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"httpOnly": false,
+									"domain": "demo.proctoru.com",
+									"path": "/",
+									"secure": true,
+									"value": "POST",
+									"key": "request_method"
+								}
+							],
+							"body": "{\"time_sent\":\"2017-08-11T16:24:30Z\",\"response_code\":1,\"message\":\"\",\"data\":{\"url\":\"https://demo.proctoru.com/students/reservations?login_token=BAhpBIFLJjc%3D--8fb2f15618c63ffccdbfc02d4c6657203e007da0\\u0026return_to=\"}}"
+						},
+						{
+							"name": "1 - Successful response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization-Token",
+										"value": "{{API-Key}}"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "time_sent",
+											"value": "{{currentTime}}",
+											"description": "<p><strong>(required)</strong></p>Timestamp that should be sent within two minutes of the current time. \n<br>\n<br><strong>Type:</strong>  ISO8601 DateTime In UTC \n<br><strong>Format:</strong>YYYY-MM-DDTHH24:MI:SSZ",
+											"type": "text"
+										},
+										{
+											"key": "student_id",
+											"value": "{{studentID}}",
+											"type": "text"
+										},
+										{
+											"key": "user_id",
+											"value": "{{studentID}}",
+											"type": "text"
+										},
+										{
+											"key": "user_password",
+											"value": "{{userPassword}}",
+											"type": "text"
+										},
+										{
+											"key": "country",
+											"value": "{{country}}",
+											"type": "text"
+										},
+										{
+											"key": "phone1",
+											"value": "{{phone1}}",
+											"type": "text"
+										},
+										{
+											"key": "phone2",
+											"value": "{{phone2}}",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "{{email}}",
+											"type": "text"
+										},
+										{
+											"key": "time_zone_id",
+											"value": "{{time_zone_id}}",
+											"type": "text"
+										},
+										{
+											"key": "notify",
+											"value": "Y",
+											"type": "text"
+										},
+										{
+											"key": "exam_id",
+											"value": "{{examID}}",
+											"type": "text"
+										},
+										{
+											"key": "course_id",
+											"value": "{{courseID}}",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "{{description}}",
+											"type": "text"
+										},
+										{
+											"key": "active_date",
+											"value": "{{start_date}}",
+											"type": "text"
+										},
+										{
+											"key": "end_date",
+											"value": "{{end_date}}",
+											"type": "text"
+										},
+										{
+											"key": "duration",
+											"value": "{{duration}}",
+											"type": "text"
+										},
+										{
+											"key": "instructor",
+											"value": "{{instructor}}",
+											"type": "text"
+										},
+										{
+											"key": "course_no",
+											"value": "{{courseNo}}",
+											"type": "text"
+										},
+										{
+											"key": "exam_password",
+											"value": "{{password}}",
+											"type": "text"
+										},
+										{
+											"key": "notes",
+											"value": "{{notes}}",
+											"type": "text"
+										},
+										{
+											"key": "reservation_id",
+											"value": "{{reservationID}}",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "{{lastName}}",
+											"type": "text"
+										},
+										{
+											"key": "first_name",
+											"value": "{{firstName}}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{URL}}/addBlueBirdExam/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"addBlueBirdExam",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Cache-Control",
+									"value": "max-age=0, private, must-revalidate",
+									"name": "Cache-Control",
+									"description": ""
+								},
+								{
+									"key": "Connection",
+									"value": "close",
+									"name": "Connection",
+									"description": ""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": ""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 11 Aug 2017 16:24:30 GMT",
+									"name": "Date",
+									"description": ""
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8b434733a3769343f58cbb4b4af428ad\"",
+									"name": "ETag",
+									"description": ""
+								},
+								{
+									"key": "Server",
+									"value": "nginx/1.10.3 (Ubuntu)",
+									"name": "Server",
+									"description": ""
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "request_method=POST; path=/; secure",
+									"name": "Set-Cookie",
+									"description": ""
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000",
+									"name": "Strict-Transport-Security",
+									"description": ""
+								},
+								{
+									"key": "Vary",
+									"value": "Origin",
+									"name": "Vary",
+									"description": ""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "ALLOWALL",
+									"name": "X-Frame-Options",
+									"description": ""
+								},
+								{
+									"key": "X-Rack-Cache",
+									"value": "invalidate, pass",
+									"name": "X-Rack-Cache",
+									"description": ""
+								},
+								{
+									"key": "X-Request-Id",
+									"value": "374fea5e-7609-413d-bcc2-3ff47dc6427a",
+									"name": "X-Request-Id",
+									"description": ""
+								},
+								{
+									"key": "X-Runtime",
+									"value": "2.544132",
+									"name": "X-Runtime",
+									"description": ""
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Invalid Date",
+									"httpOnly": false,
+									"domain": "demo.proctoru.com",
+									"path": "/",
+									"secure": true,
+									"value": "POST",
+									"key": "request_method"
+								}
+							],
+							"body": "{\"time_sent\":\"2017-08-11T16:24:30Z\",\"response_code\":1,\"message\":\"\",\"data\":{\"url\":\"https://demo.proctoru.com/students/reservations?login_token=BAhpBIFLJjc%3D--8fb2f15618c63ffccdbfc02d4c6657203e007da0\\u0026return_to=\"}}"
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"var time = new Date().toISOString();",
+					"postman.setEnvironmentVariable(\"currentTime\", time);"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
