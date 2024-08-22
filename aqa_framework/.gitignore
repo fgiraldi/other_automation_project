@@ -47,7 +47,8 @@ aws.config.json
 tmp
 
 # cucumber reports
-reports/
+reports
+!src/pageObjects/archimedes/reports
 
 # cucumber screenshots
 ./*.png
