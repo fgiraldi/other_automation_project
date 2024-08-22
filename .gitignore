@@ -1,0 +1,66 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+traces
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Dependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional REPL history
+.node_repl_history
+
+# dotenv environment variables file
+.env
+
+# allure
+allure-report*
+allure-results*
+allure.txt
+results.zip
+history.zip
+
+# personal aws config
+aws.config.json
+
+# pre-loaded extension files
+# src/fixtures/extension/
+
+#profile for setting java_home
+.profile
+
+# temporary files
+tmp
+
+# cucumber reports
+reports
+
+# cucumber screenshots
+*.png
+
+# MacOS metadata
+.DS_Store
+
+# Extension folders
+config/ext/
+extension/chrome/dist/
+
+# API test reports
+api_reports
+
+# Tests results folder
+test-results/
