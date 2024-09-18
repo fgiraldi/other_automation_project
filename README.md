@@ -1,1 +1,1 @@
-# other_automation_project
+# some_automation_project
